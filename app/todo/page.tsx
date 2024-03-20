@@ -12,8 +12,8 @@ async function fetchTodo(){
 
 export default  async function Todo(){
 
-    // const todos = await fetchTodo() || []
-    const todos = [{_id:1,title:'math',status:false},{_id:2,title:'scinece',status:false}]
+     const todos = await fetchTodo() || [{_id:1,title:'math',status:false},{_id:2,title:'scinece',status:false}]
+  
     return(
         <TodoList todos={todos} />
        

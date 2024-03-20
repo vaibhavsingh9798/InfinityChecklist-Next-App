@@ -7,9 +7,13 @@ function TodoForm() {
     const handleChange = (e) =>{
         setTodo({...todo,[e.target.name]:e.target.value})
     }
-    const handleClick = (e) =>{
+    const handleClick = async (e) =>{
         e.preventDefault();
-        console.log('click..')
+        let response = await fetch('http://localhost:3000/api/todo',{
+            method:'POST',
+            body: JSON.stringify(todo),
+            headers:{'Content-Type' : 'application.json'}
+        })
     }
    
 
