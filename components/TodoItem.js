@@ -2,9 +2,13 @@
 
 const TodoItem = ({todo}) => {
  console.log('item..',todo)
-    const handleClick = (e)=>{
+    const handleClick = async (e)=>{
          e.preventDefault();
-         console.log('click')
+         let response =  await fetch(`http://localhost:3000/api/todo/${todo._id}`,{
+            method:'PUT',
+            body : JSON.stringify({...todo,status:true}),
+            headers: {'Content-Type' : 'application/json'}
+         })
     }
     return(
         <>
